@@ -16,10 +16,10 @@ print-%: ; @echo $*=$($*)
 
 node_modules: package.json
 	rm -rf node_modules $(BOOTSTRAP_DIR)
-	npm install
+	npm install --production
 	mkdir $(BOOTSTRAP_DIR)
 	cp package.json $(BOOTSTRAP_DIR)/package.json
-	cd $(BOOTSTRAP_DIR); node ../bin/cmd.js i
+	cd $(BOOTSTRAP_DIR); node ../bin/cmd.js install --only prod
 	rm -rf node_modules
 	mv $(BOOTSTRAP_DIR)/node_modules node_modules
 	rm -rf $(BOOTSTRAP_DIR)
