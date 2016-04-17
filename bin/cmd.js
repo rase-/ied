@@ -68,6 +68,9 @@ if (argv.registry) {
       runCmd(cwd, argv)
       break
     case 't':
+    case 'start':
+    case 'build':
+    case 'stop':
     case 'test':
       // The test command is simple a run command that executes the test script.
       var _argv = Object.create(argv)
