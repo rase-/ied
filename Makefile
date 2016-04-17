@@ -16,7 +16,7 @@ print-%: ; @echo $*=$($*)
 
 node_modules: package.json
 	rm -rf node_modules $(BOOTSTRAP_DIR)
-	npm install
+	npm install --production
 	mkdir $(BOOTSTRAP_DIR)
 	cp package.json $(BOOTSTRAP_DIR)/package.json
 	cd $(BOOTSTRAP_DIR); node ../bin/cmd.js i
